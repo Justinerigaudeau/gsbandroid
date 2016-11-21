@@ -15,8 +15,8 @@ import android.os.Bundle;
             Bundle b = getIntent().getExtras();
             String log = b.getString("log");
             String pwd = b.getString("pwd");
-            Importation importation = new Importation();
-            importation.execute("http://10.0.3.2:88/gsbandroid/import.php", log, pwd);
+           //Importation importation = new Importation();
+            //importation.execute("http://10.0.3.2:88/gsbandroid/import.php", log, pwd);
 
         }
     }

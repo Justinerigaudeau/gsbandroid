@@ -3,6 +3,7 @@ package com.example.rigaudeau.gsbandroid;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,10 +30,13 @@ public class Connexion extends AsyncTask<String,Void,Boolean> {
                 InputStreamReader isr = new InputStreamReader(cnx.getInputStream());
                 BufferedReader buff = new BufferedReader(isr);
                 String ligne=buff.readLine();
+                Log.i("myGSB",ligne);
                 return ligne.equals("connect");
             }
+            else
+                Log.i("myGSB","else");
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.i("myGSB",e.getMessage());
         }
         return false;
     }
