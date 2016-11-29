@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connexion);
         Button btnCnx = (Button) findViewById(R.id.btnCnx);
+
         btnCnx.setOnClickListener(observateurClic);
+
 
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -52,20 +54,30 @@ public class MainActivity extends AppCompatActivity {
                     cnx.execute("http://10.0.3.2:88/gsbandroid/auth.php", log, pwd);
                     try {
                         if (cnx.get()) {
+
                             Intent i = new Intent(getApplicationContext(), Menu.class);
                             i.putExtra("log", log);
                             i.putExtra("pwd", pwd);
                             startActivity(i);
 
                         } else {
-                            Toast.makeText(getApplicationContext(),"Echec de la connexion", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Echec de la connexion", Toast.LENGTH_LONG).show();
                         }
                     } catch (InterruptedException | ExecutionException e) {
-                        Log.i("myGSB",e.getMessage());
+                        Log.i("myGSB", e.getMessage());
                     }
                     break;
+
+
+
+
+
+
+
+                    }
+
             }
-        }
+
     };
 
     /**
