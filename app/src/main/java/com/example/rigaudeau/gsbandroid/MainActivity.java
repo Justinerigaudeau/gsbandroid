@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btnCnx:
-                    String log = ((EditText) findViewById(R.id.editText)).getText().toString();
-                    String pwd = ((EditText) findViewById(R.id.editText2)).getText().toString();
+                    String log = ((EditText) findViewById(R.id.txtLogin)).getText().toString();
+                    String pwd = ((EditText) findViewById(R.id.txtPassword)).getText().toString();
                     Connexion cnx = new Connexion();
-                    cnx.execute("http://10.0.3.2:88/gsbandroid/auth.php", log, pwd);
+                    cnx.execute("http://10.0.3.2:88/PPE3/auth.php", log, pwd);
                     try {
                         if (cnx.get()) {
                             Intent i = new Intent(getApplicationContext(), Menu.class);
