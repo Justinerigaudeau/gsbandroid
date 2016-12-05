@@ -25,6 +25,7 @@ public class Praticien {
         return nom;
     }
 
+
     public String getPrenom() {
         return prenom;
     }
